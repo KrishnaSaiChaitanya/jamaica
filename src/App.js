@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/page";
 import { Route, Router, Routes } from "react-router-dom";
+import Navbar from "./components/navbarJamaica";
+// import Home from "./components/Home";
+// import Navbar from "./components/navbar";
 // import "../styles/css/bootstrap.min.css";
 // import "swiper/css";
 // import "swiper/css/pagination";
@@ -16,7 +19,9 @@ import { Route, Router, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Home />
+      {/* <Home /> */}
       {/* <Router>
         <NavBar />
         <Routes>

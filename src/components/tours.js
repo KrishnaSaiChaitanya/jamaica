@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -76,7 +76,8 @@ const Tours = ({ toursActive }) => {
         toursActive
           ? "wehicles tours active"
           : "wehicles tours visibility-hidden"
-      }>
+      }
+    >
       <div class="fleet-carousel" data-columns="6">
         <Swiper
           pagination={false}
@@ -84,7 +85,8 @@ const Tours = ({ toursActive }) => {
           // slidesPerView={3}
           // spaceBetween={30}
           breakpoints={breakpoints}
-          className="mySwiper">
+          className="mySwiper"
+        >
           {taxisData.map(({ id, title, img }) => {
             return (
               <SwiperSlide key={id}>

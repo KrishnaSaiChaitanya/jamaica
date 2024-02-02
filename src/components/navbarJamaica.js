@@ -1,8 +1,8 @@
 "use client";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 // import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import Taxis from "./taxis";
 import Tours from "./tours";
@@ -168,7 +168,7 @@ export default function Navbar() {
   const [taxisActive, setTaxisActive] = useState(false);
   const [toursActive, setToursActive] = useState(false);
   const [bg_black, setBg_black] = useState(false);
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   function dropdown() {
     const targets = document.querySelectorAll(".js-dropdown");
@@ -442,13 +442,13 @@ export default function Navbar() {
           classList = header.getAttribute("data-add-bg");
         }
 
-        new ScrollMagic.Scene({ offset: "6px" })
-          .setClassToggle(header, classList)
-          .addTo(App.SMcontroller);
+        // new ScrollMagic.Scene({ offset: "6px" })
+        //   .setClassToggle(header, classList)
+        //   .addTo(App.SMcontroller);
 
-        new ScrollMagic.Scene({ offset: "6px" })
-          .setClassToggle(header, "is-sticky")
-          .addTo(App.SMcontroller);
+        // new ScrollMagic.Scene({ offset: "6px" })
+        //   .setClassToggle(header, "is-sticky")
+        //   .addTo(App.SMcontroller);
       }
 
       return {
@@ -496,18 +496,18 @@ export default function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    if (
-      pathname.includes("/booking") ||
-      (pathname.includes("/jamaica") &&
-        pathname != "/jamaica/home" &&
-        pathname != "/jamaica/tours-list")
-    ) {
-      setBg_black(true);
-    } else {
-      setBg_black(false);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (
+  //     pathname.includes("/booking") ||
+  //     (pathname.includes("/jamaica") &&
+  //       pathname != "/jamaica/home" &&
+  //       pathname != "/jamaica/tours-list")
+  //   ) {
+  //     setBg_black(true);
+  //   } else {
+  //     setBg_black(false);
+  //   }
+  // }, [pathname]);
 
   return (
     <>
@@ -515,7 +515,8 @@ export default function Navbar() {
         <div
           className={
             !bg_black ? "header__container" : "header__container homepage"
-          }>
+          }
+        >
           <div className="headerMobile__left">
             <button
               className="header__menuBtn js-menu-button"
@@ -563,7 +564,8 @@ export default function Navbar() {
                                 return (
                                   <div
                                     className="desktopNavSubnav__item"
-                                    key={index}>
+                                    key={index}
+                                  >
                                     <Link href={url}>{title}</Link>
                                   </div>
                                 );
@@ -588,22 +590,26 @@ export default function Navbar() {
             <button
               href="#"
               className="d-flex"
-              onClick={() => setToursActive(!toursActive)}>
+              onClick={() => setToursActive(!toursActive)}
+            >
               <svg className="icon">
                 <use
                   xlinkHref={`/icons.svg#icon-${
                     toursActive ? "clear" : "beach"
-                  }`}></use>
+                  }`}
+                ></use>
               </svg>
             </button>
             <button
               className="d-flex"
-              onClick={() => setTaxisActive(!taxisActive)}>
+              onClick={() => setTaxisActive(!taxisActive)}
+            >
               <svg className="icon">
                 <use
                   xlinkHref={`/icons.svg#icon-${
                     taxisActive ? "clear" : "automobile"
-                  }`}></use>
+                  }`}
+                ></use>
               </svg>
             </button>
           </div>
@@ -635,7 +641,8 @@ export default function Navbar() {
                   return (
                     <li
                       className="menuNav__item -has-submenu js-has-submenu"
-                      key={id}>
+                      key={id}
+                    >
                       <a>
                         {title}
                         <i className="icon-chevron-right"></i>
@@ -650,7 +657,8 @@ export default function Navbar() {
                           return (
                             <li
                               className="submenu__item js-menu-button"
-                              key={index}>
+                              key={index}
+                            >
                               <a href={url}>{title}</a>
                             </li>
                           );

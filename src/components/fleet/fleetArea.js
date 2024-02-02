@@ -2,7 +2,7 @@
 import React from "react";
 import TempleteTitle from "../templeteTitle";
 import { vehicleData } from "../data";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa6";
 import VehicleArea from "../booking/vehicleArea";
 
@@ -35,7 +35,8 @@ const FleetArea = () => {
                       <div className="priceBox">
                         <Link
                           href="/fleet/single-fleet"
-                          className="btn-select justify-content-center">
+                          className="btn-select justify-content-center"
+                        >
                           View Details
                         </Link>
                       </div>

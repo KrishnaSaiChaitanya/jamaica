@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import SummaryBar from "@/components/booking/summaryBar";
 import OptionsArea from "@/components/booking/optionsArea";
 import SummaryBox from "@/components/booking/summaryBox";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const extraItemData = [
   {
@@ -232,12 +232,14 @@ const Extras = () => {
                     <div className="btns">
                       <button
                         className="btn btn-info"
-                        onClick={() => handleDetails("details", id)}>
+                        onClick={() => handleDetails("details", id)}
+                      >
                         INFO
                       </button>
                       <button
                         className="btn btn-info"
-                        onClick={() => handleDetails("add", id)}>
+                        onClick={() => handleDetails("add", id)}
+                      >
                         ADD
                       </button>
                     </div>

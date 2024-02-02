@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 const ContactSection = () => {
@@ -13,14 +13,14 @@ const ContactSection = () => {
             <p className="text">Contact US</p>
             <button
               className="summaryBtn d-flex"
-              onClick={() => setHelp(!help)}>
+              onClick={() => setHelp(!help)}
+            >
               <span>Urgent Help</span>
               <span className="iconBox">
                 <svg>
                   <use
-                    xlinkHref={`/icons.svg#icon-${
-                      help ? "minus" : "plus"
-                    }`}></use>
+                    xlinkHref={`/icons.svg#icon-${help ? "minus" : "plus"}`}
+                  ></use>
                 </svg>
               </span>
               {/* <svg>

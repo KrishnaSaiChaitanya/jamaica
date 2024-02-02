@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import SummaryBox from "./summaryBox";
 
 const OptionsArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
@@ -34,7 +34,8 @@ const OptionsArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
                 action="#"
                 method="post"
                 accept-charset="utf-8"
-                onSubmit={(e) => handleSubmit(e)}>
+                onSubmit={(e) => handleSubmit(e)}
+              >
                 {/* sdfdf */}
                 {/* <div className="one-half first-name"></div> */}
                 <div class="pick-date one-half first-name">
@@ -137,14 +138,16 @@ const OptionsArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
                   <label for="infomation">
                     <button
                       className="btn-information"
-                      onClick={() => setInformation(!information)}>
+                      onClick={() => setInformation(!information)}
+                    >
                       Additional Information
                       <span className="iconBox">
                         <svg class="icon">
                           <use
                             xlinkHref={`/icons.svg#icon-${
                               information ? "minus" : "plus"
-                            }`}></use>
+                            }`}
+                          ></use>
                         </svg>
                       </span>
                     </button>
@@ -153,7 +156,8 @@ const OptionsArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
                     <textarea
                       name="infomation"
                       id="infomation"
-                      placeholder="Lorem Ipsum "></textarea>
+                      placeholder="Lorem Ipsum "
+                    ></textarea>
                   )}
                 </div>
 
@@ -164,7 +168,8 @@ const OptionsArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
                   <button
                     type="submit"
                     className="submit w-100"
-                    onClick={() => setPopup(true)}>
+                    onClick={() => setPopup(true)}
+                  >
                     CONTINUE
                   </button>
                 </div>

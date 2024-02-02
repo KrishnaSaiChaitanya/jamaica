@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const blogData = {
   btns: [
@@ -119,7 +119,8 @@ const BlogArea = () => {
                     className={blogTab == title ? "active" : ""}
                     data-filter="*"
                     key={i}
-                    onClick={() => setBlogTab(title)}>
+                    onClick={() => setBlogTab(title)}
+                  >
                     {title}
                   </li>
                 );
@@ -141,7 +142,8 @@ const BlogArea = () => {
                       initial={{ transform: "scale(0.2)" }}
                       animate={{ transform: "scale(1)" }}
                       exit={{ transform: "scale(0.2)" }}
-                      className="post ipsotope transport limousine">
+                      className="post ipsotope transport limousine"
+                    >
                       <div className="featured-image">
                         <img src={img} alt={title} />
                       </div>

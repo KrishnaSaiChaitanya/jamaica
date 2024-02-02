@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SummaryBox from "./summaryBox";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const btnsData = [
   {
@@ -34,7 +34,8 @@ const CheckoutConfirmArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
                   id == btnTab ? "btn-checkout active" : "btn-checkout"
                 }
                 key={id}
-                onClick={() => setBtnTab(id)}>
+                onClick={() => setBtnTab(id)}
+              >
                 {btn}
               </button>
             );
@@ -95,7 +96,8 @@ const CheckoutConfirmArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
               </Link>
               <Link
                 href="/booking/checkout"
-                class="button btn -md -dark-1 bg-accent-1 text-white mt-20">
+                class="button btn -md -dark-1 bg-accent-1 text-white mt-20"
+              >
                 Book
               </Link>
             </div>
@@ -156,7 +158,8 @@ const CheckoutConfirmArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
               </Link>
               <Link
                 href="/booking/checkout"
-                class="button btn -md -dark-1 bg-accent-1 text-white mt-20">
+                class="button btn -md -dark-1 bg-accent-1 text-white mt-20"
+              >
                 Book
               </Link>
             </div>
@@ -217,7 +220,8 @@ const CheckoutConfirmArea = ({ summaryBarOpen, setSummaryBarOpen }) => {
               </Link>
               <Link
                 href="/booking/checkout"
-                class="button btn -md -dark-1 bg-accent-1 text-white mt-20">
+                class="button btn -md -dark-1 bg-accent-1 text-white mt-20"
+              >
                 Book
               </Link>
             </div>

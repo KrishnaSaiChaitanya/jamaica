@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 const pickAddressTabData = ["Airpots", "Hotels", "Ships"];
@@ -98,7 +98,8 @@ const MapInfo = () => {
               action="#"
               method="get"
               class="search-address"
-              accept-charset="utf-8">
+              accept-charset="utf-8"
+            >
               <input
                 type="text"
                 name="search"
@@ -114,7 +115,8 @@ const MapInfo = () => {
                           btn == pickAddressTab ? "tab-btn active" : "tab-btn"
                         }
                         key={i}
-                        onClick={() => handlePickAddressTab(btn)}>
+                        onClick={() => handlePickAddressTab(btn)}
+                      >
                         {btn}
                       </button>
                     );

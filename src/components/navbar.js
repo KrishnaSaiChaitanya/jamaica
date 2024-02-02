@@ -1,8 +1,10 @@
 "use client";
-import Link from "next/link";
+
 import React, { useState } from "react";
-import Taxis from "./taxis";
+// import Taxis from "./taxis";
 import ScrollToTop from "./scrollToTop";
+import { Link } from "react-router-dom";
+import Taxis from "./taxis";
 
 const navigationData = [
   {
@@ -181,7 +183,8 @@ const Navbar = () => {
             <li>Tours</li>
             <li
               className="vehicle"
-              onClick={() => setTaxisActive(!taxisActive)}>
+              onClick={() => setTaxisActive(!taxisActive)}
+            >
               Taxis
             </li>
             <li>(880) 172 380 956</li>
@@ -190,10 +193,11 @@ const Navbar = () => {
           <div className={navigation ? "navigation active" : "navigation"}>
             <div
               id="main-menu"
-              className={navigation ? "main-menu active" : "main-menu"}>
+              className={navigation ? "main-menu active" : "main-menu"}
+            >
               <ul className="top-menuleft d-flex align-items-center justify-content-between">
                 <li className="x_logo">
-                  <Link href="/" title="logo prodrive">
+                  <Link to="/" title="logo prodrive">
                     <img src="/images/logowhite.png" alt="" />
                   </Link>
                 </li>
@@ -209,9 +213,10 @@ const Navbar = () => {
                 </li>
                 <li className="x_close mb-0">
                   <a
-                    href="#"
+                    to="#"
                     className="close_x"
-                    onClick={() => setNavigation(false)}>
+                    onClick={() => setNavigation(false)}
+                  >
                     <img src="/images/icon/close_x.png" alt="" />
                   </a>
                 </li>
@@ -223,7 +228,7 @@ const Navbar = () => {
                       return (
                         <li className="has-dropdown" key={id}>
                           {/* <span>Home</span> */}
-                          <Link href={url} onClick={() => setNavigation(false)}>
+                          <Link to={url} onClick={() => setNavigation(false)}>
                             <span>{title}</span>
                           </Link>
                         </li>
@@ -233,7 +238,8 @@ const Navbar = () => {
                         <li
                           className="has-dropdown"
                           key={id}
-                          onClick={() => handleNavigationDropdown(id)}>
+                          onClick={() => handleNavigationDropdown(id)}
+                        >
                           <span>{title}</span>
                           <ul
                             className="menu-dropdown"
@@ -241,13 +247,15 @@ const Navbar = () => {
                               isActive
                                 ? { display: "block" }
                                 : { display: "none" }
-                            }>
+                            }
+                          >
                             {items.map(({ title, url }, index) => {
                               return (
                                 <li key={index}>
                                   <Link
-                                    href={url}
-                                    onClick={() => setNavigation(false)}>
+                                    to={url}
+                                    onClick={() => setNavigation(false)}
+                                  >
                                     {title}
                                   </Link>
                                 </li>
@@ -262,50 +270,50 @@ const Navbar = () => {
               </ul>
               <div className="button">
                 <div className="d-flex align-items-center mb-3">
-                  <Link href="#" className="quote mr-3 " title="">
+                  <Link to="#" className="quote mr-3 " title="">
                     Login?Register
                   </Link>
-                  <Link href="#" className="booking" title="">
+                  <Link to="#" className="booking" title="">
                     Online Booking
                   </Link>
                 </div>
                 <div className="d-flex align-items-center">
-                  <Link href="#" className="booking mr-3" title="">
+                  <Link to="#" className="booking mr-3" title="">
                     Contact Us
                   </Link>
-                  <Link href="#" className="quote" title="">
+                  <Link to="#" className="quote" title="">
                     Get A Quote
                   </Link>
                 </div>
               </div>
               <ul className="social-ft">
                 <li>
-                  <a href="#" title="Facebook">
+                  <a to="#" title="Facebook">
                     <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Twitter">
+                  <a to="#" title="Twitter">
                     <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Instagram">
+                  <a to="#" title="Instagram">
                     <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Pinterest">
+                  <a to="#" title="Pinterest">
                     <i className="fa fa-pinterest" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Dribble">
+                  <a to="#" title="Dribble">
                     <i className="fa fa-dribbble" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Google">
+                  <a to="#" title="Google">
                     <i className="fa fa-google" aria-hidden="true"></i>
                   </a>
                 </li>
@@ -314,21 +322,21 @@ const Navbar = () => {
           </div>
 
           <div id="logo" className="logo-pro">
-            <Link href="/" title="logo prodrive">
+            <Link to="/" title="logo prodrive">
               <img src="/images/logo_dark.png" alt="" className="w-auto" />
             </Link>
           </div>
           <div className="box-right">
             <div className="login">
-              <a href="#">Login/</a>
-              <a href="#">Register</a>
+              <a to="#">Login/</a>
+              <a to="#">Register</a>
             </div>
             <ul className="quocte-booking">
               <li>
-                <a href="#">Get A Quote</a>
+                <a to="#">Get A Quote</a>
               </li>
               <li>
-                <a href="#">Online Booking</a>
+                <a to="#">Online Booking</a>
               </li>
             </ul>
           </div>
@@ -336,7 +344,8 @@ const Navbar = () => {
             <li className="border-l-0">Tours</li>
             <li
               className={taxisActive ? "vehicle active" : "vehicle"}
-              onClick={() => setTaxisActive(!taxisActive)}>
+              onClick={() => setTaxisActive(!taxisActive)}
+            >
               Taxis
             </li>
           </ul>

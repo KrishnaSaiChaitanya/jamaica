@@ -1,6 +1,6 @@
 "use client";
 import TourCard from "@/components/TourCard";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 // import Accordion from "@/utils/functions";
 import React, { useEffect } from "react";
 
@@ -310,7 +310,8 @@ const Tours = () => {
                   <div className="col-lg-4 col-sm-6">
                     <a
                       href="#"
-                      className="tourCard -type-1 border-1 rounded-12 -hover-shadow ratio">
+                      className="tourCard -type-1 border-1 rounded-12 -hover-shadow ratio"
+                    >
                       <TourCard key={index} {...tour} />
                     </a>
                   </div>

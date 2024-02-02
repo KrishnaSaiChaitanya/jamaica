@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { vehicleData } from "../data";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa6";
 import MapInfo from "./mapInfo";
 
@@ -33,14 +33,16 @@ const VehicleArea = ({ summaryBarOpen, setSummaryBarOpen, fleetPage }) => {
                 <p className="text">Trip Info</p>
                 <button
                   className="summaryBtn d-flex"
-                  onClick={() => setSummaryBarOpen(!summaryBarOpen)}>
+                  onClick={() => setSummaryBarOpen(!summaryBarOpen)}
+                >
                   <span>Booking Details</span>
                   <span className="iconBox">
                     <svg>
                       <use
                         xlinkHref={`/icons.svg#icon-${
                           summaryBarOpen ? "minus" : "plus"
-                        }`}></use>
+                        }`}
+                      ></use>
                     </svg>
                   </span>
                   {/* <svg>
@@ -79,7 +81,8 @@ const VehicleArea = ({ summaryBarOpen, setSummaryBarOpen, fleetPage }) => {
                         {title}
                         <button
                           className="vehicle-info-btn"
-                          onClick={() => handleFlipCard(id)}>
+                          onClick={() => handleFlipCard(id)}
+                        >
                           <svg class="icon">
                             <use xlinkHref="/icons.svg#icon-info-with-circle"></use>
                           </svg>
@@ -102,7 +105,8 @@ const VehicleArea = ({ summaryBarOpen, setSummaryBarOpen, fleetPage }) => {
                         </p>
                         <Link
                           href="/booking/car-options"
-                          className="btn-select">
+                          className="btn-select"
+                        >
                           <span className="infoBox text-center">
                             Oneway <br /> Trip
                           </span>
@@ -118,7 +122,8 @@ const VehicleArea = ({ summaryBarOpen, setSummaryBarOpen, fleetPage }) => {
                         </div>
                         <Link
                           href="/booking/car-options"
-                          className="btn-select">
+                          className="btn-select"
+                        >
                           <span className="infoBox text-center">
                             Round <br /> Trip
                           </span>
@@ -169,12 +174,14 @@ const VehicleArea = ({ summaryBarOpen, setSummaryBarOpen, fleetPage }) => {
                   <div
                     className={
                       infoData ? "vehicle-flip-box show" : "vehicle-flip-box"
-                    }>
+                    }
+                  >
                     <div className="vehicle-title-box">
                       <div className="name-car mb-20">{subtitle}</div>
                       <button
                         className="vehicle-info-btn vehicle-close-btn"
-                        onClick={() => handleFlipCard(id)}>
+                        onClick={() => handleFlipCard(id)}
+                      >
                         <svg class="icon">
                           <use xlinkHref="/icons.svg#icon-clear"></use>
                         </svg>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -78,7 +78,8 @@ const Taxis = ({ taxisActive, setTaxisActive }) => {
           // slidesPerView={3}
           // spaceBetween={30}
           breakpoints={breakpoints}
-          className="mySwiper">
+          className="mySwiper"
+        >
           {taxisData.map(({ id, title, img }) => {
             return (
               <SwiperSlide key={id}>
@@ -105,7 +106,7 @@ const Taxis = ({ taxisActive, setTaxisActive }) => {
           })}
         </Swiper>
 
-        {/* {taxisData.map(({ id, title, img }) => {
+        {taxisData.map(({ id, title, img }) => {
           return (
             <div class="fleet-item" key={id}>
               <div class="images">
@@ -126,14 +127,15 @@ const Taxis = ({ taxisActive, setTaxisActive }) => {
               </div>
             </div>
           );
-        })} */}
+        })}
         {/* <div class="owl-carousel">
         </div> */}
       </div>
       <div className="serach-wrapper">
         <button
           className="btn-search"
-          onClick={() => setTaxisActive(!taxisActive)}>
+          onClick={() => setTaxisActive(!taxisActive)}
+        >
           Close
           <svg class="icon">
             <use xlinkHref="/icons.svg#icon-clear"></use>
